@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Tulpen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <div id="backdrop"></div>
+    <header>
+        <h1> My Library </h1>
+    </header>
+    <main>
+        <section class="options">
+            <button id="add-btn"><span class="add-icon">&#43;</span> ADD BOOK</button>
+        </section>
+        <section id="add-edit-book" class="modal">
+            <button id="return"><span class="left-arrow-icon">&#8592;</span>Return</button>
+            <h2> Add new book </h2>
+            <form action="#"  method="POST" class="add-book-form" name="add-book-form">
+                <div class="form-group">
+                    <label for="book-title">Title</label>
+                    <input type="text" id="book-title" name="book-title" pattern="^[A-Za-z]{1,70}$" placeholder="Title" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-author">Author</label>
+                    <input type="text" id="book-author" name="book-author" pattern="^[A-Za-z]{1,70}$" placeholder="Author" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Publication year</label>
+                    <input type="number" id="year" name="year" pattern="^[0-9]{1,10}$" placeholder="2000" >
+                </div>
+                <div class="form-group">
+                    <label for="read-status">Have you read this book?</label>
+                    <input type="checkbox" id="read-status" name="read-status">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="ADD BOOK" id="add-book">
+                </div>
+        </section>
+        <section id="library-app">
+        </section>
+    </main>
+</body>
+</html>

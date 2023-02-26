@@ -1,0 +1,147 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: 'Cormorant Garamond', 'serif';
+    background-color: rgb(250, 250, 250, 1);
+}
+
+header,
+main {
+    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 60rem;
+}
+
+header {
+    background-image: url("../assets/library_cover.png");
+    background-size:cover;
+    height: clamp(8rem, 18vh, 12rem); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    position: relative; /* Required for modal positioning */
+}
+
+h1 {
+    font-size: clamp(2.5em, 5vh, 5em);
+    font-weight: 700;
+    color: #FFF;
+}
+
+h2 {
+    font-family: 'Tulpen One', 'sans-serif';
+}
+
+button,
+input[type="submit"],
+input[type="text"],
+input[type="number"] {
+    font-family: inherit;
+    line-height: 1;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+}
+
+#add-btn {
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 13px 20px;
+}
+
+#return {
+    padding: 1.5rem 0;
+}
+
+.options {
+    display:flex;
+    justify-content: flex-end;
+}
+
+.add-book-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.book-list {
+    display:grid;
+    gap: 2rem;
+}
+
+.book-card {
+    background-color: #FFF;
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+    padding: 2rem 1rem;
+}
+
+.book-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.book-card__options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.status-checkbox {
+    display: inline-block;
+}
+
+.modal {
+    position: absolute;
+    left: calc(50% - 15rem);
+    z-index: 100;
+    width: 30rem;
+    padding: 2rem;
+    background-color: #FFF;
+    display: none;
+}
+  
+.modal.visible {
+    display: block;
+    animation: fade-slide-in 0.3s ease-out forwards;
+}
+
+#backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.50);
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+}
+  
+#backdrop.visible {
+    display: block;
+    pointer-events: all;
+}
+
+@media (min-width: 734px) {
+    .book-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
