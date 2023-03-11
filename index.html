@@ -18,6 +18,10 @@
     </header>
     <main>
         <section class="options">
+            <div class="options-group">
+                <input type="text" name="book-filter" id="book-filter">
+                <button id="search-btn"> Search </button>
+            </div>
             <button id="add-btn"><span class="add-icon">&#43;</span> ADD BOOK</button>
         </section>
         <section id="add-edit-book" class="modal">
@@ -34,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     <label for="year">Publication year</label>
-                    <input type="number" id="year" name="year" pattern="^[0-9]{1,10}$" placeholder="2000" >
+                    <input type="number" id="year" name="year" pattern="^[0-9]{1,4}$" placeholder="2000">
                 </div>
                 <div class="form-group">
                     <label for="read-status">Have you read this book?</label>

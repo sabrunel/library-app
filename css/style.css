@@ -67,7 +67,8 @@ button {
 
 .options {
     display:flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .add-book-form {
@@ -110,9 +111,9 @@ button {
 
 .modal {
     position: absolute;
-    left: calc(50% - 15rem);
+    left: calc(50% - 10rem);
     z-index: 100;
-    width: 30rem;
+    width: 20rem;
     padding: 2rem;
     background-color: #FFF;
     display: none;

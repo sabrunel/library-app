@@ -57,17 +57,24 @@ class BookList {
                 // console.log(book.read);
                 break;
             }
-            currentIndex++;
+        currentIndex++;
         } 
     }
 
-    render() {
+    render(filter="") {
         const bookList = document.createElement('ul');
         bookList.className = 'book-list';
-        for (const book of this.books) {
+
+        // Sample the book list based on the search term
+        const filteredBooks = !filter
+        ? this.books
+        : this.books.filter(book => book.title.toLowerCase().includes(filter));
+
+        // Render the filtered list
+        filteredBooks.forEach(book => {
             const bookCard = book.render();
             bookList.appendChild(bookCard);
-        }
+        })
         return bookList;
       }
 }
@@ -75,6 +82,11 @@ class BookList {
 
 class Library {
     bookList = new BookList();
+
+    filterBooksHandler() {
+        const filterTerm = document.getElementById("book-filter").value;
+        this.render(filterTerm);
+    }
 
     changeReadStatusHandler(element) {
         if (element.hasAttribute("checked")) {
@@ -87,18 +99,6 @@ class Library {
             element.previousElementSibling.textContent = "Read";
         }
     } 
-
-    clearUserInputs() {
-        const inputTitle = document.getElementById("book-title");
-        const inputAuthor = document.getElementById("book-author");
-        const inputYear = document.getElementById("year");
-        const inputReadStatus = document.getElementById("read-status");
-
-        inputTitle.value = '';
-        inputAuthor.value = '';
-        inputYear.value = '';
-        inputReadStatus.removeAttribute("checked"); // Doesn't seem to do anything
-    }
 
     returnHandler() {
         this.showAddBookModalHandler();
@@ -132,7 +132,27 @@ class Library {
         backdrop.classList.toggle("visible");
     }
 
-    enableEditBook() {
+    clearUserInputs() {
+        const userInputFields = document.querySelectorAll("input[type=text], input[type=number]");
+        userInputFields.forEach( e => e.value = '');
+
+        const inputReadStatus = document.getElementById("read-status");
+        inputReadStatus.removeAttribute("checked"); // Doesn't seem to do anything
+    }
+
+    enableAppOptions() {
+        const searchBtn = document.getElementById('search-btn');
+        const addBookBtn = document.getElementById("add-btn");
+        const returnBtn = document.getElementById('return');
+        const confirmAddBookBtn = document.getElementById('add-book');
+
+        searchBtn.addEventListener("click", this.filterBooksHandler.bind(this)); 
+        addBookBtn.addEventListener("click", this.showAddBookModalHandler);
+        returnBtn.addEventListener("click", this.returnHandler.bind(this));
+        confirmAddBookBtn.addEventListener("click", this.addBookHandler.bind(this));
+    }
+
+    enableBookCardOptions() {
         const bookListElement = document.querySelector("ul");
         const booksArray = Array.prototype.slice.call(bookListElement.children); // converts HTML collection to array
         bookListElement.addEventListener("click", (e) => {
@@ -150,23 +170,8 @@ class Library {
                     }
         })
     }
-
-    enableReturnBtn() {
-        const ReturnBtn = document.getElementById('return');
-        ReturnBtn.addEventListener("click", this.returnHandler.bind(this)); 
-    }
-
-    enableConfirmAddBookbtn() {
-        const confirmAddBookBtn = document.getElementById('add-book');
-        confirmAddBookBtn.addEventListener("click", this.addBookHandler.bind(this)); 
-    }
-
-    enableAddBookBtn() {
-        const addBookBtn = document.querySelector('button:first-of-type');
-        addBookBtn.addEventListener("click", this.showAddBookModalHandler);
-    }
   
-    render() {
+    render(filter) {
         const renderHook = document.getElementById('library-app');
         
         // Clear existing books
@@ -174,11 +179,11 @@ class Library {
             renderHook.removeChild(renderHook.lastChild);
         }
 
-        const bookListElements = this.bookList.render();
+        const bookListElements = this.bookList.render(filter);
         renderHook.appendChild(bookListElements);
 
         // Set the click event listener for each newly added book
-        this.enableEditBook(); 
+        this.enableBookCardOptions(); 
     }
 }
 
@@ -187,9 +192,7 @@ class App {
     static init() {
         const libraryApp = new Library();
         libraryApp.render();
-        libraryApp.enableAddBookBtn();
-        libraryApp.enableConfirmAddBookbtn();
-        libraryApp.enableReturnBtn();
+        libraryApp.enableAppOptions();
         libraryApp.clearUserInputs();
     }
 }
