@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Tulpen+One&display=swap" rel="stylesheet">
@@ -15,17 +15,22 @@
     <div id="backdrop"></div>
     <header>
         <h1> My Library </h1>
+        <div class="search-bar">
+            <input type="image" src="assets/icons/search.svg" id="search-btn" class="icon" alt="Search icon">
+            <input type="text" name="book-filter" id="book-filter" placeholder="Book title or author">
+        </div>
     </header>
     <main>
-        <section class="options">
-            <div class="options-group">
-                <input type="text" name="book-filter" id="book-filter">
-                <button id="search-btn"> Search </button>
+        <section class="options">   
+            <div class="book-categories">
+                <button id="all-btn" class="book-category active">All books</button>
+                <button id="read-btn" class="book-category">Read books</button>
+                <button id="not-read-btn" class="book-category">Books to read</button>
             </div>
-            <button id="add-btn"><span class="add-icon">&#43;</span> ADD BOOK</button>
+            <button id="add-btn">&#43; ADD BOOK</button>
         </section>
         <section id="add-edit-book" class="modal">
-            <button id="return"><span class="left-arrow-icon">&#8592;</span>Return</button>
+            <button id="return">&#8592;</button>
             <h2> Add new book </h2>
             <form action="#"  method="POST" class="add-book-form" name="add-book-form">
                 <div class="form-group">

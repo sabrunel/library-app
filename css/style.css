@@ -18,12 +18,12 @@ main {
 }
 
 header {
-    background-image: url("../assets/library_cover.png");
-    background-size:cover;
-    height: clamp(8rem, 18vh, 12rem); 
+    background-image: url("../assets/images/library_cover.png");
+    background-size: cover;
+    height: clamp(8rem, 18vh, 12rem);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 main {
@@ -31,13 +31,18 @@ main {
 }
 
 h1 {
-    font-size: clamp(2.5em, 5vh, 5em);
+    font-size: clamp(2em, 4vh, 4em);
     font-weight: 700;
     color: #FFF;
+    text-align: center;
 }
 
 h2 {
     font-family: 'Tulpen One', 'sans-serif';
+}
+
+label {
+    font-size: 1.1em;
 }
 
 button,
@@ -48,11 +53,27 @@ input[type="number"] {
     line-height: 1;
 }
 
-button {
+input[type="text"],
+input[type="number"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 1em;
+}
+
+button,
+input[type="submit"] {
     cursor: pointer;
     background-color: transparent;
     outline: 0;
     border: 0;
+    font-size: 1em;
+}
+
+.icon {
+    height: 1.1rem;
+    width: auto;
+    cursor: pointer;
 }
 
 #add-btn {
@@ -65,11 +86,46 @@ button {
     padding: 1.5rem 0;
 }
 
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    margin: 0 auto;
+    padding: 0.25rem 0.5rem;
+}
+
+.search-bar .icon {
+    height: 1.5rem;
+}
+
+#book-filter {
+    border: none;
+    width: 20rem;
+}
+
+#book-filter::placeholder {
+    opacity: 0.9;
+}
+
 .options {
-    display:flex;
+    display: flex;
     justify-content: space-between;
+}
+
+.book-categories {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
     align-items: center;
 }
+
+.book-category.active {
+    border-bottom: solid 1px black;
+    font-weight: 600;
+}
+
 
 .add-book-form {
     display: grid;
@@ -89,7 +145,8 @@ button {
 .book-card {
     background-color: #FFF;
     box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
-    padding: 2rem 1rem;
+    border-radius: 4px;
+    padding: 1.5rem 1rem 1rem;
 }
 
 .book-card__content {
@@ -116,6 +173,7 @@ button {
     width: 20rem;
     padding: 2rem;
     background-color: #FFF;
+    border-radius: 4px;
     display: none;
 }
   

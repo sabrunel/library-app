@@ -24,7 +24,7 @@ class Book {
                         this.read ? "checked" : ""
                     }>
                 </div>
-                <button class="delete-book">Delete</button>
+                <img src="assets/icons/delete.svg" class="icon delete-book" alt="Delete book">
             </div>
         `;
     return bookCard;
@@ -38,7 +38,9 @@ class BookList {
         new Book("The Hobbit", "J.R.R. Tolkien", "1937", false)
     ];
 
-    constructor() {}
+    constructor() {
+        this.filteredBooks = this.books;
+    }
 
     addBook(book) {
         this.books.push(book);
@@ -61,17 +63,27 @@ class BookList {
         } 
     }
 
-    render(filter="") {
+    filterBookCategory(category="") {
+        this.filteredBooks = this.books;
+
+        if (category === "read") {
+            this.filteredBooks = this.books.filter(book => book.read);
+        } else if (category === "not read") {
+            this.filteredBooks = this.books.filter(book => !book.read);
+        }
+    }
+        
+    render(userInput="") {
         const bookList = document.createElement('ul');
         bookList.className = 'book-list';
 
         // Sample the book list based on the search term
-        const filteredBooks = !filter
-        ? this.books
-        : this.books.filter(book => book.title.toLowerCase().includes(filter));
+        const searchedBooks = !userInput
+        ? this.filteredBooks
+        : this.filteredBooks.filter(book => book.title.toLowerCase().includes(userInput) || book.author.toLowerCase().includes(userInput));
 
         // Render the filtered list
-        filteredBooks.forEach(book => {
+        searchedBooks.forEach(book => {
             const bookCard = book.render();
             bookList.appendChild(bookCard);
         })
@@ -83,9 +95,33 @@ class BookList {
 class Library {
     bookList = new BookList();
 
-    filterBooksHandler() {
-        const filterTerm = document.getElementById("book-filter").value;
-        this.render(filterTerm);
+    filterBooksHandler(category) {
+        const allBooksBtn = document.getElementById('all-btn');
+        const readBooksBtn = document.getElementById('read-btn');
+        const notReadBooksBtn = document.getElementById('not-read-btn');
+
+        if (category === "read") {
+            this.bookList.filterBookCategory("read");
+            readBooksBtn.classList.add("active");
+            notReadBooksBtn.classList.remove("active");
+            allBooksBtn.classList.remove("active");
+        } else if (category === "not read") {
+            this.bookList.filterBookCategory("not read");
+            readBooksBtn.classList.remove("active");
+            notReadBooksBtn.classList.add("active");
+            allBooksBtn.classList.remove("active");
+        } else {
+            this.bookList.filterBookCategory();
+            readBooksBtn.classList.remove("active");
+            notReadBooksBtn.classList.remove("active");
+            allBooksBtn.classList.add("active");
+        }
+        this.render();
+    }
+
+    searchBooksHandler() {
+        const searchTerm = document.getElementById("book-filter").value.toLowerCase();
+        this.render(searchTerm);
     }
 
     changeReadStatusHandler(element) {
@@ -142,11 +178,17 @@ class Library {
 
     enableAppOptions() {
         const searchBtn = document.getElementById('search-btn');
+        const allBooksBtn = document.getElementById('all-btn');
+        const readBooksBtn = document.getElementById('read-btn');
+        const notReadBooksBtn = document.getElementById('not-read-btn');
         const addBookBtn = document.getElementById("add-btn");
         const returnBtn = document.getElementById('return');
         const confirmAddBookBtn = document.getElementById('add-book');
 
-        searchBtn.addEventListener("click", this.filterBooksHandler.bind(this)); 
+        searchBtn.addEventListener("click", this.searchBooksHandler.bind(this));
+        allBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this));
+        readBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this, "read"));
+        notReadBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this, "not read"));
         addBookBtn.addEventListener("click", this.showAddBookModalHandler);
         returnBtn.addEventListener("click", this.returnHandler.bind(this));
         confirmAddBookBtn.addEventListener("click", this.addBookHandler.bind(this));
@@ -171,7 +213,7 @@ class Library {
         })
     }
   
-    render(filter) {
+    render(userInput) {
         const renderHook = document.getElementById('library-app');
         
         // Clear existing books
@@ -179,7 +221,7 @@ class Library {
             renderHook.removeChild(renderHook.lastChild);
         }
 
-        const bookListElements = this.bookList.render(filter);
+        const bookListElements = this.bookList.render(userInput);
         renderHook.appendChild(bookListElements);
 
         // Set the click event listener for each newly added book
