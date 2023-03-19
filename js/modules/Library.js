@@ -1,99 +1,11 @@
-class Book {
-    constructor(title, author, year, read) {
-        this.title = title;
-        this.author = author;
-        this.year = year;
-        this.read = read;
-        }
+import { BookList } from './BookList.js'
+import { Book } from './Book.js'
 
-    render() {
-        const bookCard = document.createElement('li');
-        bookCard.className = 'book-card';
-        bookCard.innerHTML = `
-            <div class="book-card__content">
-                <h2>${this.title}</h2>
-                <h3>${this.author}</h3>
-                <p>Year: ${this.year}</p>
-            </div>
-            <div class="book-card__options">
-                <div class="status-checkbox">
-                <label for="read-status">${
-                    this.read ? "Read" : "Not yet read"
-                }</label>
-                    <input type="checkbox" name="read-status" class="read-status" ${
-                        this.read ? "checked" : ""
-                    }>
-                </div>
-                <img src="assets/icons/delete.svg" class="icon delete-book" alt="Delete book">
-            </div>
-        `;
-    return bookCard;
-    }
-}
-
-class BookList {
-
-    books = [
-        new Book("Hitchhiker's Guide to the Galaxy", "Douglas Adams", "1979", true),
-        new Book("The Hobbit", "J.R.R. Tolkien", "1937", false)
-    ];
-
+export class Library {
     constructor() {
-        this.filteredBooks = this.books;
+        this.bookList = new BookList();
+        this.enableAppOptions();
     }
-
-    addBook(book) {
-        this.books.push(book);
-
-    }
-
-    deleteBook(bookIndex) {
-        this.books.splice(bookIndex, 1);
-    }
-
-    updateReadStatus(bookIndex) {
-        let currentIndex = 0;
-        for (const book of this.books) {
-            if (this.books.indexOf(book) === bookIndex) {
-                book.read = !book.read;
-                // console.log(book.read);
-                break;
-            }
-        currentIndex++;
-        } 
-    }
-
-    filterBookCategory(category="") {
-        this.filteredBooks = this.books;
-
-        if (category === "read") {
-            this.filteredBooks = this.books.filter(book => book.read);
-        } else if (category === "not read") {
-            this.filteredBooks = this.books.filter(book => !book.read);
-        }
-    }
-        
-    render(userInput="") {
-        const bookList = document.createElement('ul');
-        bookList.className = 'book-list';
-
-        // Sample the book list based on the search term
-        const searchedBooks = !userInput
-        ? this.filteredBooks
-        : this.filteredBooks.filter(book => book.title.toLowerCase().includes(userInput) || book.author.toLowerCase().includes(userInput));
-
-        // Render the filtered list
-        searchedBooks.forEach(book => {
-            const bookCard = book.render();
-            bookList.appendChild(bookCard);
-        })
-        return bookList;
-      }
-}
-
-
-class Library {
-    bookList = new BookList();
 
     filterBooksHandler(category) {
         const allBooksBtn = document.getElementById('all-btn');
@@ -228,15 +140,3 @@ class Library {
         this.enableBookCardOptions(); 
     }
 }
-
-class App {
-
-    static init() {
-        const libraryApp = new Library();
-        libraryApp.render();
-        libraryApp.enableAppOptions();
-        libraryApp.clearUserInputs();
-    }
-}
-  
-App.init();
