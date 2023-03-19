@@ -7,7 +7,7 @@
     <title>Library App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Tulpen+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
 </head>
@@ -16,18 +16,15 @@
     <header>
         <h1> My Library </h1>
         <div class="search-bar">
-            <input type="image" src="assets/icons/search.svg" id="search-btn" class="icon" alt="Search icon">
             <input type="text" name="book-filter" id="book-filter" placeholder="Book title or author">
+            <input type="image" src="assets/icons/search.svg" id="search-btn" class="icon" alt="Search icon">
         </div>
     </header>
     <main>
         <section class="options">   
-            <div class="book-categories">
-                <button id="all-btn" class="book-category active">All books</button>
-                <button id="read-btn" class="book-category">Read books</button>
-                <button id="not-read-btn" class="book-category">Books to read</button>
-            </div>
-            <button id="add-btn">&#43; ADD BOOK</button>
+            <button id="all-btn" class="book-category active">All books</button>
+            <button id="read-btn" class="book-category">Read books</button>
+            <button id="not-read-btn" class="book-category">Books to read</button>
         </section>
         <section id="add-edit-book" class="modal">
             <button id="return">&#8592;</button>
@@ -46,15 +43,18 @@
                     <input type="number" id="year" name="year" pattern="^[0-9]{1,4}$" placeholder="2000">
                 </div>
                 <div class="form-group">
-                    <label for="read-status">Have you read this book?</label>
                     <input type="checkbox" id="read-status" name="read-status">
+                    <label for="read-status">I have read this book</label>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="ADD BOOK" id="add-book">
+                    <input type="submit" value="Add book" id="add-book">
                 </div>
         </section>
         <section id="library-app">
         </section>
     </main>
+    <footer>
+        <button id="add-btn">&#43; New book</button>
+    </footer>
 </body>
 </html>

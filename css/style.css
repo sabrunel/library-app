@@ -7,27 +7,39 @@
 
 body {
     font-family: 'Cormorant Garamond', 'serif';
-    background-color: rgb(250, 250, 250, 1);
+    background-color: rgba(255, 255, 255, 1);
+    height: 100vh;
+    overflow: auto;
 }
 
 header,
 main {
-    padding: 1.5rem;
     margin: 0 auto;
     max-width: 60rem;
+    padding: 1.5rem 1rem;
 }
 
 header {
     background-image: url("../assets/images/library_cover.png");
     background-size: cover;
-    height: clamp(8rem, 18vh, 12rem);
+    height: clamp(8rem, 20vh, 12rem);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
 }
 
 main {
     position: relative; /* Required for modal positioning */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    padding: 2.5rem 0;
+    text-align: center;
 }
 
 h1 {
@@ -38,7 +50,8 @@ h1 {
 }
 
 h2 {
-    font-family: 'Tulpen One', 'sans-serif';
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 1.25em;
 }
 
 label {
@@ -67,19 +80,25 @@ input[type="submit"] {
     background-color: transparent;
     outline: 0;
     border: 0;
-    font-size: 1em;
+    font-size: 1.1em;
+}
+
+#add-btn,
+input[type="submit"] {
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: black;
+    color: #FFF;
+    font-size: 1.2em;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 13px 20px;
 }
 
 .icon {
     height: 1.1rem;
     width: auto;
     cursor: pointer;
-}
-
-#add-btn {
-    font-size: 1.2em;
-    font-weight: 600;
-    padding: 13px 20px;
 }
 
 #return {
@@ -89,10 +108,9 @@ input[type="submit"] {
 .search-bar {
     display: flex;
     gap: 0.5rem;
-    justify-content: center;
+    justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 4px;
-    margin: 0 auto;
+    border-radius: 25px;
     padding: 0.25rem 0.5rem;
 }
 
@@ -102,23 +120,18 @@ input[type="submit"] {
 
 #book-filter {
     border: none;
-    width: 20rem;
 }
 
 #book-filter::placeholder {
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .options {
     display: flex;
-    justify-content: space-between;
-}
-
-.book-categories {
-    display: flex;
-    gap: 0.5rem;
+    gap: 0.8rem;
     justify-content: center;
     align-items: center;
+    padding: 1rem 0;
 }
 
 .book-category.active {
@@ -126,10 +139,9 @@ input[type="submit"] {
     font-weight: 600;
 }
 
-
 .add-book-form {
     display: grid;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .form-group {
@@ -137,29 +149,43 @@ input[type="submit"] {
     gap: 0.2rem;
 }
 
+.form-group,
+.form-group:last-child {
+    padding-top: 1.5rem;
+}
+
+.form-group:nth-child(4) {
+    display: inline-block;
+}
+
 .book-list {
     display:grid;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
 .book-card {
-    background-color: #FFF;
-    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    padding: 1.5rem 1rem 1rem;
+    background-color: rgb(240, 240, 240);
+    border-radius: 25px;
+    min-height: 200px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .book-card__content {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
+    
 }
 
 .book-card__options {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
 }
 
 .status-checkbox {
@@ -168,12 +194,13 @@ input[type="submit"] {
 
 .modal {
     position: absolute;
-    left: calc(50% - 10rem);
+    /* left: calc(50% - 15rem); */
+    left: 0;
     z-index: 100;
-    width: 20rem;
+    width: 100%;
     padding: 2rem;
     background-color: #FFF;
-    border-radius: 4px;
+    border-radius: 25px;
     display: none;
 }
   
@@ -200,7 +227,18 @@ input[type="submit"] {
 }
 
 @media (min-width: 734px) {
+
+    footer {
+        position: sticky;
+        padding: 5rem 0;
+    }
+
+    .modal {
+        left: calc(50% - 15rem);
+        width: 30rem;
+    }
+
     .book-list {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
