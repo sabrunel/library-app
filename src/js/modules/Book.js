@@ -1,3 +1,5 @@
+import deleteIcon from '../../assets/icons/delete.svg';
+
 export class Book {
     constructor(title, author, year, read) {
         this.title = title;
@@ -24,7 +26,7 @@ export class Book {
                         this.read ? "checked" : ""
                     }>
                 </div>
-                <img src="assets/icons/delete.svg" class="icon delete-book" alt="Delete book">
+                <img src="${deleteIcon}" class="icon delete-book" alt="Delete book">
             </div>
         `;
     return bookCard;

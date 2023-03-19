@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="backdrop"></div>
+    <header>
+        <h1> My Library </h1>
+        <div class="search-bar">
+            <input type="text" name="book-filter" id="book-filter" placeholder="Book title or author">
+            <input type="submit" value="Search" id="search-btn">
+        </div>
+    </header>
+    <main>
+        <section class="options">   
+            <button id="all-btn" class="book-category active">All books</button>
+            <button id="read-btn" class="book-category">Read books</button>
+            <button id="not-read-btn" class="book-category">Books to read</button>
+        </section>
+        <section id="add-edit-book" class="modal">
+            <button id="return">&#8592;</button>
+            <h2> Add new book </h2>
+            <form action="#"  method="POST" class="add-book-form" name="add-book-form">
+                <div class="form-group">
+                    <label for="book-title">Title</label>
+                    <input type="text" id="book-title" name="book-title" pattern="^[A-Za-z]{1,70}$" placeholder="Title" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-author">Author</label>
+                    <input type="text" id="book-author" name="book-author" pattern="^[A-Za-z]{1,70}$" placeholder="Author" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Publication year</label>
+                    <input type="number" id="year" name="year" pattern="^[0-9]{1,4}$" placeholder="2000">
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="read-status" name="read-status">
+                    <label for="read-status">I have read this book</label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add book" id="add-book">
+                </div>
+        </section>
+        <section id="library-app">
+        </section>
+    </main>
+    <footer>
+        <button id="add-btn">&#43; New book</button>
+    </footer>
+</body>
+</html>

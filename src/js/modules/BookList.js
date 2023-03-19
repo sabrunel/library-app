@@ -20,14 +20,12 @@ export class BookList {
     }
 
     updateReadStatus(bookIndex) {
-        let currentIndex = 0;
         for (const book of this.books) {
             if (this.books.indexOf(book) === bookIndex) {
                 book.read = !book.read;
                 // console.log(book.read);
                 break;
             }
-        currentIndex++;
         } 
     }
 

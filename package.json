@@ -1,0 +1,31 @@
+{
+  "name": "library-app",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "serve": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabrunel/library-app.git"
+  },
+  "author": "Samantha Brunel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabrunel/library-app/issues"
+  },
+  "homepage": "https://github.com/sabrunel/library-app#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "eslint": "^8.36.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1"
+  }
+}

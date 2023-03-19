@@ -92,7 +92,7 @@ input[type="submit"] {
     font-size: 1.2em;
     font-size: 1.2em;
     font-weight: 600;
-    padding: 13px 20px;
+    padding: 1rem 1.2rem;
 }
 
 .icon {
@@ -111,15 +111,12 @@ input[type="submit"] {
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 25px;
-    padding: 0.25rem 0.5rem;
-}
-
-.search-bar .icon {
-    height: 1.5rem;
 }
 
 #book-filter {
     border: none;
+    flex-grow:1;
+    padding-left: 1rem;
 }
 
 #book-filter::placeholder {
