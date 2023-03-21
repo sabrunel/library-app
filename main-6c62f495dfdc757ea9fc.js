@@ -26,7 +26,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "*, ::before, ::after {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n\nbody {\n    font-family: 'Cormorant Garamond', 'serif';\n    background-color: rgba(255, 255, 255, 1);\n    height: 100vh;\n    overflow: auto;\n}\n\nheader,\nmain {\n    margin: 0 auto;\n    max-width: 60rem;\n    padding: 1.5rem 1rem;\n}\n\nheader {\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-size: cover;\n    height: clamp(8rem, 20vh, 12rem);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    gap: 2rem;\n}\n\nmain {\n    position: relative; /* Required for modal positioning */\n}\n\nfooter {\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));\n    padding: 2.5rem 0;\n    text-align: center;\n}\n\nh1 {\n    font-size: clamp(2em, 4vh, 4em);\n    font-weight: 700;\n    color: #FFF;\n    text-align: center;\n}\n\nh2 {\n    font-family: 'Oswald', 'sans-serif';\n    font-size: 1.25em;\n}\n\nlabel {\n    font-size: 1.1em;\n}\n\nbutton,\ninput[type=\"submit\"],\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    font-family: inherit;\n    line-height: 1;\n}\n\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    background-color: transparent;\n    border: none;\n    border-bottom: 1px solid black;\n    font-size: 1em;\n}\n\nbutton,\ninput[type=\"submit\"] {\n    cursor: pointer;\n    background-color: transparent;\n    outline: 0;\n    border: 0;\n    font-size: 1.1em;\n}\n\n#add-btn,\ninput[type=\"submit\"] {\n    border: 1px solid black;\n    border-radius: 25px;\n    background-color: black;\n    color: #FFF;\n    font-size: 1.2em;\n    font-size: 1.2em;\n    font-weight: 600;\n    padding: 13px 20px;\n}\n\n.icon {\n    height: 1.1rem;\n    width: auto;\n    cursor: pointer;\n}\n\n#return {\n    padding: 1.5rem 0;\n}\n\n.search-bar {\n    display: flex;\n    gap: 0.5rem;\n    justify-content: space-between;\n    background-color: rgba(255, 255, 255, 0.7);\n    border-radius: 25px;\n    padding: 0.25rem 0.5rem;\n}\n\n.search-bar .icon {\n    height: 1.5rem;\n}\n\n#book-filter {\n    border: none;\n}\n\n#book-filter::placeholder {\n    opacity: 0.95;\n}\n\n.options {\n    display: flex;\n    gap: 0.8rem;\n    justify-content: center;\n    align-items: center;\n    padding: 1rem 0;\n}\n\n.book-category.active {\n    border-bottom: solid 1px black;\n    font-weight: 600;\n}\n\n.add-book-form {\n    display: grid;\n    gap: 0.5rem;\n}\n\n.form-group {\n    display: grid;\n    gap: 0.2rem;\n}\n\n.form-group,\n.form-group:last-child {\n    padding-top: 1.5rem;\n}\n\n.form-group:nth-child(4) {\n    display: inline-block;\n}\n\n.book-list {\n    display:grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 1rem;\n}\n\n.book-card {\n    background-color: rgb(240, 240, 240);\n    border-radius: 25px;\n    min-height: 200px;\n    padding: 1.5rem 1rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n\n.book-card__content {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n    \n}\n\n.book-card__options {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    gap: 0.5rem;\n}\n\n.status-checkbox {\n    display: inline-block;\n}\n\n.modal {\n    position: absolute;\n    /* left: calc(50% - 15rem); */\n    left: 0;\n    z-index: 100;\n    width: 100%;\n    padding: 2rem;\n    background-color: #FFF;\n    border-radius: 25px;\n    display: none;\n}\n  \n.modal.visible {\n    display: block;\n    animation: fade-slide-in 0.3s ease-out forwards;\n}\n\n#backdrop {\n    position: fixed;\n    width: 100%;\n    height: 100vh;\n    top: 0;\n    left: 0;\n    background: rgba(0, 0, 0, 0.50);\n    z-index: 10;\n    pointer-events: none;\n    display: none;\n}\n  \n#backdrop.visible {\n    display: block;\n    pointer-events: all;\n}\n\n@media (min-width: 734px) {\n\n    footer {\n        position: sticky;\n        padding: 5rem 0;\n    }\n\n    .modal {\n        left: calc(50% - 15rem);\n        width: 30rem;\n    }\n\n    .book-list {\n        grid-template-columns: repeat(3, 1fr);\n    }\n}", "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;IACI,sBAAsB;IACtB,SAAS;IACT,UAAU;IACV,gBAAgB;AACpB;;AAEA;IACI,0CAA0C;IAC1C,wCAAwC;IACxC,aAAa;IACb,cAAc;AAClB;;AAEA;;IAEI,cAAc;IACd,gBAAgB;IAChB,oBAAoB;AACxB;;AAEA;IACI,yDAA2D;IAC3D,sBAAsB;IACtB,gCAAgC;IAChC,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,SAAS;AACb;;AAEA;IACI,kBAAkB,EAAE,mCAAmC;AAC3D;;AAEA;IACI,eAAe;IACf,SAAS;IACT,WAAW;IACX,yFAAyF;IACzF,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,+BAA+B;IAC/B,gBAAgB;IAChB,WAAW;IACX,kBAAkB;AACtB;;AAEA;IACI,mCAAmC;IACnC,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;;;;IAII,oBAAoB;IACpB,cAAc;AAClB;;AAEA;;IAEI,6BAA6B;IAC7B,YAAY;IACZ,8BAA8B;IAC9B,cAAc;AAClB;;AAEA;;IAEI,eAAe;IACf,6BAA6B;IAC7B,UAAU;IACV,SAAS;IACT,gBAAgB;AACpB;;AAEA;;IAEI,uBAAuB;IACvB,mBAAmB;IACnB,uBAAuB;IACvB,WAAW;IACX,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;IAChB,kBAAkB;AACtB;;AAEA;IACI,cAAc;IACd,WAAW;IACX,eAAe;AACnB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,WAAW;IACX,8BAA8B;IAC9B,0CAA0C;IAC1C,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,WAAW;IACX,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,8BAA8B;IAC9B,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,WAAW;AACf;;AAEA;IACI,aAAa;IACb,WAAW;AACf;;AAEA;;IAEI,mBAAmB;AACvB;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,YAAY;IACZ,qCAAqC;IACrC,SAAS;AACb;;AAEA;IACI,oCAAoC;IACpC,mBAAmB;IACnB,iBAAiB;IACjB,oBAAoB;IACpB,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,WAAW;;AAEf;;AAEA;IACI,aAAa;IACb,yBAAyB;IACzB,mBAAmB;IACnB,WAAW;AACf;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,kBAAkB;IAClB,6BAA6B;IAC7B,OAAO;IACP,YAAY;IACZ,WAAW;IACX,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,aAAa;AACjB;;AAEA;IACI,cAAc;IACd,+CAA+C;AACnD;;AAEA;IACI,eAAe;IACf,WAAW;IACX,aAAa;IACb,MAAM;IACN,OAAO;IACP,+BAA+B;IAC/B,WAAW;IACX,oBAAoB;IACpB,aAAa;AACjB;;AAEA;IACI,cAAc;IACd,mBAAmB;AACvB;;AAEA;;IAEI;QACI,gBAAgB;QAChB,eAAe;IACnB;;IAEA;QACI,uBAAuB;QACvB,YAAY;IAChB;;IAEA;QACI,qCAAqC;IACzC;AACJ","sourcesContent":["*, ::before, ::after {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n\nbody {\n    font-family: 'Cormorant Garamond', 'serif';\n    background-color: rgba(255, 255, 255, 1);\n    height: 100vh;\n    overflow: auto;\n}\n\nheader,\nmain {\n    margin: 0 auto;\n    max-width: 60rem;\n    padding: 1.5rem 1rem;\n}\n\nheader {\n    background-image: url(\"../assets/images/library_cover.png\");\n    background-size: cover;\n    height: clamp(8rem, 20vh, 12rem);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    gap: 2rem;\n}\n\nmain {\n    position: relative; /* Required for modal positioning */\n}\n\nfooter {\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));\n    padding: 2.5rem 0;\n    text-align: center;\n}\n\nh1 {\n    font-size: clamp(2em, 4vh, 4em);\n    font-weight: 700;\n    color: #FFF;\n    text-align: center;\n}\n\nh2 {\n    font-family: 'Oswald', 'sans-serif';\n    font-size: 1.25em;\n}\n\nlabel {\n    font-size: 1.1em;\n}\n\nbutton,\ninput[type=\"submit\"],\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    font-family: inherit;\n    line-height: 1;\n}\n\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    background-color: transparent;\n    border: none;\n    border-bottom: 1px solid black;\n    font-size: 1em;\n}\n\nbutton,\ninput[type=\"submit\"] {\n    cursor: pointer;\n    background-color: transparent;\n    outline: 0;\n    border: 0;\n    font-size: 1.1em;\n}\n\n#add-btn,\ninput[type=\"submit\"] {\n    border: 1px solid black;\n    border-radius: 25px;\n    background-color: black;\n    color: #FFF;\n    font-size: 1.2em;\n    font-size: 1.2em;\n    font-weight: 600;\n    padding: 13px 20px;\n}\n\n.icon {\n    height: 1.1rem;\n    width: auto;\n    cursor: pointer;\n}\n\n#return {\n    padding: 1.5rem 0;\n}\n\n.search-bar {\n    display: flex;\n    gap: 0.5rem;\n    justify-content: space-between;\n    background-color: rgba(255, 255, 255, 0.7);\n    border-radius: 25px;\n    padding: 0.25rem 0.5rem;\n}\n\n.search-bar .icon {\n    height: 1.5rem;\n}\n\n#book-filter {\n    border: none;\n}\n\n#book-filter::placeholder {\n    opacity: 0.95;\n}\n\n.options {\n    display: flex;\n    gap: 0.8rem;\n    justify-content: center;\n    align-items: center;\n    padding: 1rem 0;\n}\n\n.book-category.active {\n    border-bottom: solid 1px black;\n    font-weight: 600;\n}\n\n.add-book-form {\n    display: grid;\n    gap: 0.5rem;\n}\n\n.form-group {\n    display: grid;\n    gap: 0.2rem;\n}\n\n.form-group,\n.form-group:last-child {\n    padding-top: 1.5rem;\n}\n\n.form-group:nth-child(4) {\n    display: inline-block;\n}\n\n.book-list {\n    display:grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 1rem;\n}\n\n.book-card {\n    background-color: rgb(240, 240, 240);\n    border-radius: 25px;\n    min-height: 200px;\n    padding: 1.5rem 1rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n\n.book-card__content {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n    \n}\n\n.book-card__options {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    gap: 0.5rem;\n}\n\n.status-checkbox {\n    display: inline-block;\n}\n\n.modal {\n    position: absolute;\n    /* left: calc(50% - 15rem); */\n    left: 0;\n    z-index: 100;\n    width: 100%;\n    padding: 2rem;\n    background-color: #FFF;\n    border-radius: 25px;\n    display: none;\n}\n  \n.modal.visible {\n    display: block;\n    animation: fade-slide-in 0.3s ease-out forwards;\n}\n\n#backdrop {\n    position: fixed;\n    width: 100%;\n    height: 100vh;\n    top: 0;\n    left: 0;\n    background: rgba(0, 0, 0, 0.50);\n    z-index: 10;\n    pointer-events: none;\n    display: none;\n}\n  \n#backdrop.visible {\n    display: block;\n    pointer-events: all;\n}\n\n@media (min-width: 734px) {\n\n    footer {\n        position: sticky;\n        padding: 5rem 0;\n    }\n\n    .modal {\n        left: calc(50% - 15rem);\n        width: 30rem;\n    }\n\n    .book-list {\n        grid-template-columns: repeat(3, 1fr);\n    }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "*, ::before, ::after {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n\nbody {\n    font-family: 'Cormorant Garamond', 'serif';\n    background-color: rgba(255, 255, 255, 1);\n    height: 100vh;\n    overflow: auto;\n}\n\nheader,\nmain {\n    margin: 0 auto;\n    max-width: 60rem;\n    padding: 1.5rem 1rem;\n}\n\nheader {\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-size: cover;\n    height: clamp(8rem, 20vh, 12rem);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    gap: 2rem;\n}\n\nmain {\n    position: relative; /* Required for modal positioning */\n}\n\nfooter {\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));\n    padding: 2.5rem 0;\n    text-align: center;\n}\n\nh1 {\n    font-size: clamp(2em, 4vh, 4em);\n    font-weight: 700;\n    color: #FFF;\n    text-align: center;\n}\n\nh2 {\n    font-family: 'Oswald', 'sans-serif';\n    font-size: 1.25em;\n}\n\nlabel {\n    font-size: 1.1em;\n}\n\nbutton,\ninput[type=\"submit\"],\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    font-family: inherit;\n    line-height: 1;\n}\n\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    background-color: transparent;\n    border: none;\n    border-bottom: 1px solid black;\n    font-size: 1em;\n}\n\nbutton,\ninput[type=\"submit\"] {\n    cursor: pointer;\n    background-color: transparent;\n    outline: 0;\n    border: 0;\n    font-size: 1.1em;\n}\n\n#add-btn,\ninput[type=\"submit\"] {\n    border: 1px solid black;\n    border-radius: 25px;\n    background-color: black;\n    color: #FFF;\n    font-size: 1.2em;\n    font-size: 1.2em;\n    font-weight: 600;\n    padding: 1rem 1.2rem;\n}\n\n.icon {\n    height: 1.1rem;\n    width: auto;\n    cursor: pointer;\n}\n\n#return {\n    padding: 1.5rem 0;\n}\n\n.search-bar {\n    display: flex;\n    gap: 0.5rem;\n    justify-content: space-between;\n    background-color: rgba(255, 255, 255, 0.7);\n    border-radius: 25px;\n}\n\n#book-filter {\n    border: none;\n    flex-grow:1;\n    padding-left: 1rem;\n}\n\n#book-filter::placeholder {\n    opacity: 0.95;\n}\n\n.options {\n    display: flex;\n    gap: 0.8rem;\n    justify-content: center;\n    align-items: center;\n    padding: 1rem 0;\n}\n\n.book-category.active {\n    border-bottom: solid 1px black;\n    font-weight: 600;\n}\n\n.add-book-form {\n    display: grid;\n    gap: 0.5rem;\n}\n\n.form-group {\n    display: grid;\n    gap: 0.2rem;\n}\n\n.form-group,\n.form-group:last-child {\n    padding-top: 1.5rem;\n}\n\n.form-group:nth-child(4) {\n    display: inline-block;\n}\n\n.book-list {\n    display:grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 1rem;\n}\n\n.book-card {\n    background-color: rgb(240, 240, 240);\n    border-radius: 25px;\n    min-height: 200px;\n    padding: 1.5rem 1rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n\n.book-card__content {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n    \n}\n\n.book-card__options {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    gap: 0.5rem;\n}\n\n.status-checkbox {\n    display: inline-block;\n}\n\n.modal {\n    position: absolute;\n    /* left: calc(50% - 15rem); */\n    left: 0;\n    z-index: 100;\n    width: 100%;\n    padding: 2rem;\n    background-color: #FFF;\n    border-radius: 25px;\n    display: none;\n}\n  \n.modal.visible {\n    display: block;\n    animation: fade-slide-in 0.3s ease-out forwards;\n}\n\n#backdrop {\n    position: fixed;\n    width: 100%;\n    height: 100vh;\n    top: 0;\n    left: 0;\n    background: rgba(0, 0, 0, 0.50);\n    z-index: 10;\n    pointer-events: none;\n    display: none;\n}\n  \n#backdrop.visible {\n    display: block;\n    pointer-events: all;\n}\n\n@media (min-width: 734px) {\n\n    footer {\n        position: sticky;\n        padding: 5rem 0;\n    }\n\n    .modal {\n        left: calc(50% - 15rem);\n        width: 30rem;\n    }\n\n    .book-list {\n        grid-template-columns: repeat(3, 1fr);\n    }\n}", "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;IACI,sBAAsB;IACtB,SAAS;IACT,UAAU;IACV,gBAAgB;AACpB;;AAEA;IACI,0CAA0C;IAC1C,wCAAwC;IACxC,aAAa;IACb,cAAc;AAClB;;AAEA;;IAEI,cAAc;IACd,gBAAgB;IAChB,oBAAoB;AACxB;;AAEA;IACI,yDAA2D;IAC3D,sBAAsB;IACtB,gCAAgC;IAChC,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,SAAS;AACb;;AAEA;IACI,kBAAkB,EAAE,mCAAmC;AAC3D;;AAEA;IACI,eAAe;IACf,SAAS;IACT,WAAW;IACX,yFAAyF;IACzF,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,+BAA+B;IAC/B,gBAAgB;IAChB,WAAW;IACX,kBAAkB;AACtB;;AAEA;IACI,mCAAmC;IACnC,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;;;;IAII,oBAAoB;IACpB,cAAc;AAClB;;AAEA;;IAEI,6BAA6B;IAC7B,YAAY;IACZ,8BAA8B;IAC9B,cAAc;AAClB;;AAEA;;IAEI,eAAe;IACf,6BAA6B;IAC7B,UAAU;IACV,SAAS;IACT,gBAAgB;AACpB;;AAEA;;IAEI,uBAAuB;IACvB,mBAAmB;IACnB,uBAAuB;IACvB,WAAW;IACX,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;IAChB,oBAAoB;AACxB;;AAEA;IACI,cAAc;IACd,WAAW;IACX,eAAe;AACnB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,WAAW;IACX,8BAA8B;IAC9B,0CAA0C;IAC1C,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,WAAW;IACX,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,8BAA8B;IAC9B,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,WAAW;AACf;;AAEA;IACI,aAAa;IACb,WAAW;AACf;;AAEA;;IAEI,mBAAmB;AACvB;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,YAAY;IACZ,qCAAqC;IACrC,SAAS;AACb;;AAEA;IACI,oCAAoC;IACpC,mBAAmB;IACnB,iBAAiB;IACjB,oBAAoB;IACpB,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,WAAW;;AAEf;;AAEA;IACI,aAAa;IACb,yBAAyB;IACzB,mBAAmB;IACnB,WAAW;AACf;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,kBAAkB;IAClB,6BAA6B;IAC7B,OAAO;IACP,YAAY;IACZ,WAAW;IACX,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,aAAa;AACjB;;AAEA;IACI,cAAc;IACd,+CAA+C;AACnD;;AAEA;IACI,eAAe;IACf,WAAW;IACX,aAAa;IACb,MAAM;IACN,OAAO;IACP,+BAA+B;IAC/B,WAAW;IACX,oBAAoB;IACpB,aAAa;AACjB;;AAEA;IACI,cAAc;IACd,mBAAmB;AACvB;;AAEA;;IAEI;QACI,gBAAgB;QAChB,eAAe;IACnB;;IAEA;QACI,uBAAuB;QACvB,YAAY;IAChB;;IAEA;QACI,qCAAqC;IACzC;AACJ","sourcesContent":["*, ::before, ::after {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n\nbody {\n    font-family: 'Cormorant Garamond', 'serif';\n    background-color: rgba(255, 255, 255, 1);\n    height: 100vh;\n    overflow: auto;\n}\n\nheader,\nmain {\n    margin: 0 auto;\n    max-width: 60rem;\n    padding: 1.5rem 1rem;\n}\n\nheader {\n    background-image: url(\"../assets/images/library_cover.png\");\n    background-size: cover;\n    height: clamp(8rem, 20vh, 12rem);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    gap: 2rem;\n}\n\nmain {\n    position: relative; /* Required for modal positioning */\n}\n\nfooter {\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));\n    padding: 2.5rem 0;\n    text-align: center;\n}\n\nh1 {\n    font-size: clamp(2em, 4vh, 4em);\n    font-weight: 700;\n    color: #FFF;\n    text-align: center;\n}\n\nh2 {\n    font-family: 'Oswald', 'sans-serif';\n    font-size: 1.25em;\n}\n\nlabel {\n    font-size: 1.1em;\n}\n\nbutton,\ninput[type=\"submit\"],\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    font-family: inherit;\n    line-height: 1;\n}\n\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    background-color: transparent;\n    border: none;\n    border-bottom: 1px solid black;\n    font-size: 1em;\n}\n\nbutton,\ninput[type=\"submit\"] {\n    cursor: pointer;\n    background-color: transparent;\n    outline: 0;\n    border: 0;\n    font-size: 1.1em;\n}\n\n#add-btn,\ninput[type=\"submit\"] {\n    border: 1px solid black;\n    border-radius: 25px;\n    background-color: black;\n    color: #FFF;\n    font-size: 1.2em;\n    font-size: 1.2em;\n    font-weight: 600;\n    padding: 1rem 1.2rem;\n}\n\n.icon {\n    height: 1.1rem;\n    width: auto;\n    cursor: pointer;\n}\n\n#return {\n    padding: 1.5rem 0;\n}\n\n.search-bar {\n    display: flex;\n    gap: 0.5rem;\n    justify-content: space-between;\n    background-color: rgba(255, 255, 255, 0.7);\n    border-radius: 25px;\n}\n\n#book-filter {\n    border: none;\n    flex-grow:1;\n    padding-left: 1rem;\n}\n\n#book-filter::placeholder {\n    opacity: 0.95;\n}\n\n.options {\n    display: flex;\n    gap: 0.8rem;\n    justify-content: center;\n    align-items: center;\n    padding: 1rem 0;\n}\n\n.book-category.active {\n    border-bottom: solid 1px black;\n    font-weight: 600;\n}\n\n.add-book-form {\n    display: grid;\n    gap: 0.5rem;\n}\n\n.form-group {\n    display: grid;\n    gap: 0.2rem;\n}\n\n.form-group,\n.form-group:last-child {\n    padding-top: 1.5rem;\n}\n\n.form-group:nth-child(4) {\n    display: inline-block;\n}\n\n.book-list {\n    display:grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 1rem;\n}\n\n.book-card {\n    background-color: rgb(240, 240, 240);\n    border-radius: 25px;\n    min-height: 200px;\n    padding: 1.5rem 1rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n\n.book-card__content {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n    \n}\n\n.book-card__options {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    gap: 0.5rem;\n}\n\n.status-checkbox {\n    display: inline-block;\n}\n\n.modal {\n    position: absolute;\n    /* left: calc(50% - 15rem); */\n    left: 0;\n    z-index: 100;\n    width: 100%;\n    padding: 2rem;\n    background-color: #FFF;\n    border-radius: 25px;\n    display: none;\n}\n  \n.modal.visible {\n    display: block;\n    animation: fade-slide-in 0.3s ease-out forwards;\n}\n\n#backdrop {\n    position: fixed;\n    width: 100%;\n    height: 100vh;\n    top: 0;\n    left: 0;\n    background: rgba(0, 0, 0, 0.50);\n    z-index: 10;\n    pointer-events: none;\n    display: none;\n}\n  \n#backdrop.visible {\n    display: block;\n    pointer-events: all;\n}\n\n@media (min-width: 734px) {\n\n    footer {\n        position: sticky;\n        padding: 5rem 0;\n    }\n\n    .modal {\n        left: calc(50% - 15rem);\n        width: 30rem;\n    }\n\n    .book-list {\n        grid-template-columns: repeat(3, 1fr);\n    }\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -518,9 +518,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Book": () => (/* binding */ Book)
 /* harmony export */ });
-/* harmony import */ var _assets_icons_delete_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../assets/icons/delete.svg */ "./src/assets/icons/delete.svg");
-
-
 class Book {
     constructor(title, author, year, read) {
         this.title = title;
@@ -528,30 +525,6 @@ class Book {
         this.year = year;
         this.read = read;
         }
-
-    render() {
-        const bookCard = document.createElement('li');
-        bookCard.className = 'book-card';
-        bookCard.innerHTML = `
-            <div class="book-card__content">
-                <h2>${this.title}</h2>
-                <h3>${this.author}</h3>
-                <p>Year: ${this.year}</p>
-            </div>
-            <div class="book-card__options">
-                <div class="status-checkbox">
-                <label for="read-status">${
-                    this.read ? "Read" : "Not yet read"
-                }</label>
-                    <input type="checkbox" name="read-status" class="read-status" ${
-                        this.read ? "checked" : ""
-                    }>
-                </div>
-                <img src="${_assets_icons_delete_svg__WEBPACK_IMPORTED_MODULE_0__}" class="icon delete-book" alt="Delete book">
-            </div>
-        `;
-    return bookCard;
-    }
 }
 
 /***/ }),
@@ -569,6 +542,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Book_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Book.js */ "./src/js/modules/Book.js");
 
 
+// Model
 class BookList {
     constructor() {
         this.books = [
@@ -607,23 +581,38 @@ class BookList {
             this.filteredBooks = this.books.filter(book => !book.read);
         }
     }
-        
-    render(userInput="") {
-        const bookList = document.createElement('ul');
-        bookList.className = 'book-list';
+}
 
-        // Sample the book list based on the search term
-        const searchedBooks = !userInput
-        ? this.filteredBooks
-        : this.filteredBooks.filter(book => book.title.toLowerCase().includes(userInput) || book.author.toLowerCase().includes(userInput));
+/***/ }),
 
-        // Render the filtered list
-        searchedBooks.forEach(book => {
-            const bookCard = book.render();
-            bookList.appendChild(bookCard);
-        })
-        return bookList;
-      }
+/***/ "./src/js/modules/Librarian.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/Librarian.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Librarian": () => (/* binding */ Librarian)
+/* harmony export */ });
+/* harmony import */ var _BookList_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BookList.js */ "./src/js/modules/BookList.js");
+/* harmony import */ var _Book_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Book.js */ "./src/js/modules/Book.js");
+/* harmony import */ var _Library_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Library.js */ "./src/js/modules/Library.js");
+
+
+
+
+// Controller
+class Librarian {
+    constructor() {
+        this.bookList = new _BookList_js__WEBPACK_IMPORTED_MODULE_0__.BookList();
+        this.library = new _Library_js__WEBPACK_IMPORTED_MODULE_2__.Library();
+        this.library.bindAddBook(this.addBookHandler);
+    }
+
+    addBookHandler(inputTitle, inputAuthor, inputYear, inputReadStatus) {
+        this.bookList.addBook(new _Book_js__WEBPACK_IMPORTED_MODULE_1__.Book(inputTitle, inputAuthor, inputYear, inputReadStatus));
+    }
 }
 
 /***/ }),
@@ -639,36 +628,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Library": () => (/* binding */ Library)
 /* harmony export */ });
 /* harmony import */ var _BookList_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BookList.js */ "./src/js/modules/BookList.js");
-/* harmony import */ var _Book_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Book.js */ "./src/js/modules/Book.js");
+/* harmony import */ var _assets_icons_delete_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/icons/delete.svg */ "./src/assets/icons/delete.svg");
 
 
 
+// View
 class Library {
     constructor() {
         this.bookList = new _BookList_js__WEBPACK_IMPORTED_MODULE_0__.BookList();
+        this.renderHook = document.getElementById('library-app');
+        
+        // Buttons
+        this.allBooksBtn = document.getElementById('all-btn');
+        this.readBooksBtn = document.getElementById('read-btn');
+        this.notReadBooksBtn = document.getElementById('not-read-btn');
+        this.searchBtn = document.getElementById('search-btn');
+        this.addBookBtn = document.getElementById("add-btn");
+        this.returnBtn = document.getElementById('return');
+        this.confirmAddBookBtn = document.getElementById('add-book');
+
         this.enableAppOptions();
     }
 
-    filterBooksHandler(category) {
-        const allBooksBtn = document.getElementById('all-btn');
-        const readBooksBtn = document.getElementById('read-btn');
-        const notReadBooksBtn = document.getElementById('not-read-btn');
+    createElement(tag, className) {
+        const element = document.createElement(tag);
 
+        if (className) {
+            element.className = className;
+        }
+        return element
+    }
+
+    filterBooksHandler(category) {
         if (category === "read") {
             this.bookList.filterBookCategory("read");
-            readBooksBtn.classList.add("active");
-            notReadBooksBtn.classList.remove("active");
-            allBooksBtn.classList.remove("active");
+            this.readBooksBtn.classList.add("active");
+            this.notReadBooksBtn.classList.remove("active");
+            this.allBooksBtn.classList.remove("active");
         } else if (category === "not read") {
             this.bookList.filterBookCategory("not read");
-            readBooksBtn.classList.remove("active");
-            notReadBooksBtn.classList.add("active");
-            allBooksBtn.classList.remove("active");
+            this.readBooksBtn.classList.remove("active");
+            this.notReadBooksBtn.classList.add("active");
+            this.allBooksBtn.classList.remove("active");
         } else {
             this.bookList.filterBookCategory();
-            readBooksBtn.classList.remove("active");
-            notReadBooksBtn.classList.remove("active");
-            allBooksBtn.classList.add("active");
+            this.readBooksBtn.classList.remove("active");
+            this.notReadBooksBtn.classList.remove("active");
+            this.allBooksBtn.classList.add("active");
         }
         this.render();
     }
@@ -699,22 +705,6 @@ class Library {
         element.parentElement.parentElement.remove();
     }   
 
-    addBookHandler() {
-        event.preventDefault();
-        const inputTitle = document.getElementById("book-title").value;
-        const inputAuthor = document.getElementById("book-author").value;
-        const inputYear = document.getElementById("year").value;
-        const inputReadStatus = document.getElementById("read-status").checked; // True or False
-
-        const book = new _Book_js__WEBPACK_IMPORTED_MODULE_1__.Book(inputTitle, inputAuthor, inputYear, inputReadStatus);
-        
-        this.bookList.addBook(book);
-        
-        this.showAddBookModalHandler();
-        this.clearUserInputs();
-        this.render();
-    }
-
     showAddBookModalHandler() {
         const addBookModal = document.getElementById("add-edit-book");
         const backdrop = document.getElementById("backdrop");
@@ -731,23 +721,29 @@ class Library {
     }
 
     enableAppOptions() {
-        const searchBtn = document.getElementById('search-btn');
-        const allBooksBtn = document.getElementById('all-btn');
-        const readBooksBtn = document.getElementById('read-btn');
-        const notReadBooksBtn = document.getElementById('not-read-btn');
-        const addBookBtn = document.getElementById("add-btn");
-        const returnBtn = document.getElementById('return');
-        const confirmAddBookBtn = document.getElementById('add-book');
-
-        searchBtn.addEventListener("click", this.searchBooksHandler.bind(this));
-        allBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this));
-        readBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this, "read"));
-        notReadBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this, "not read"));
-        addBookBtn.addEventListener("click", this.showAddBookModalHandler);
-        returnBtn.addEventListener("click", this.returnHandler.bind(this));
-        confirmAddBookBtn.addEventListener("click", this.addBookHandler.bind(this));
+        this.searchBtn.addEventListener("click", this.searchBooksHandler.bind(this));
+        this.allBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this));
+        this.readBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this, "read"));
+        this.notReadBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this, "not read"));
+        this.returnBtn.addEventListener("click", this.returnHandler.bind(this));
+        this.confirmAddBookBtn.addEventListener("click", this.addBookHandler.bind(this));
     }
 
+    bindAddBook(handler) {
+        this.addBookBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const inputTitle = document.getElementById("book-title").value;
+            const inputAuthor = document.getElementById("book-author").value;
+            const inputYear = document.getElementById("year").value;
+            const inputReadStatus = document.getElementById("read-status").checked; // True or False
+
+            handler(inputTitle, inputAuthor, inputYear, inputReadStatus);
+            this.clearUserInputs();
+            this.showAddBookModalHandler();
+            this.render();
+        })
+    }
+        
     enableBookCardOptions() {
         const bookListElement = document.querySelector("ul");
         const booksArray = Array.prototype.slice.call(bookListElement.children); // converts HTML collection to array
@@ -766,17 +762,54 @@ class Library {
                     }
         })
     }
+
+    renderBook(book) {
+        const bookCard = this.createElement("li", "book-card");
+        bookCard.innerHTML = `
+            <div class="book-card__content">
+                <h2>${book.title}</h2>
+                <h3>${book.author}</h3>
+                <p>Year: ${book.year}</p>
+            </div>
+            <div class="book-card__options">
+                <div class="status-checkbox">
+                <label for="read-status">${
+                    book.read ? "Read" : "Not yet read"
+                }</label>
+                    <input type="checkbox" name="read-status" class="read-status" ${
+                        book.read ? "checked" : ""
+                    }>
+                </div>
+                <img src="${_assets_icons_delete_svg__WEBPACK_IMPORTED_MODULE_1__}" class="icon delete-book" alt="Delete book">
+            </div>
+        `;
+    return bookCard;
+    }
+
+    renderBookList(userInput="") {
+        const bookList = this.createElement("ul", "book-list");
+
+        // Sample the book list based on the search term
+        const searchedBooks = !userInput
+        ? this.bookList.filteredBooks
+        : this.bookList.filteredBooks.filter(book => book.title.toLowerCase().includes(userInput) || book.author.toLowerCase().includes(userInput));
+
+        // Render the filtered list
+        searchedBooks.forEach(book => {
+            const bookCard = this.renderBook(book);
+            bookList.appendChild(bookCard);
+        })
+        return bookList;
+      }
   
     render(userInput) {
-        const renderHook = document.getElementById('library-app');
-        
         // Clear existing books
-        while (renderHook.firstChild) {
-            renderHook.removeChild(renderHook.lastChild);
+        while (this.renderHook.firstChild) {
+            this.renderHook.removeChild(this.renderHook.lastChild);
         }
 
-        const bookListElements = this.bookList.render(userInput);
-        renderHook.appendChild(bookListElements);
+        const bookListElements = this.renderBookList(userInput);
+        this.renderHook.appendChild(bookListElements);
 
         // Set the click event listener for each newly added book
         this.enableBookCardOptions(); 
@@ -946,16 +979,16 @@ var __webpack_exports__ = {};
   !*** ./src/js/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_Library_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/Library.js */ "./src/js/modules/Library.js");
+/* harmony import */ var _modules_Librarian_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/Librarian.js */ "./src/js/modules/Librarian.js");
 /* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/style.css */ "./src/css/style.css");
 
 
 
 class App {
     static init() {
-        const libraryApp = new _modules_Library_js__WEBPACK_IMPORTED_MODULE_0__.Library();
-        libraryApp.render();
-        libraryApp.clearUserInputs();
+        const librarian = new _modules_Librarian_js__WEBPACK_IMPORTED_MODULE_0__.Librarian();
+        librarian.library.render();
+        librarian.library.clearUserInputs();
     }
 }
   
@@ -964,4 +997,4 @@ App.init();
 
 /******/ })()
 ;
-//# sourceMappingURL=main-b9a1a23dbdd5c4e71b91.js.map
+//# sourceMappingURL=main-6c62f495dfdc757ea9fc.js.map
