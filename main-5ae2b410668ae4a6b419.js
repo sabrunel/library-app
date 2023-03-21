@@ -542,7 +542,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Book_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Book.js */ "./src/js/modules/Book.js");
 
 
-// Model
 class BookList {
     constructor() {
         this.books = [
@@ -585,38 +584,6 @@ class BookList {
 
 /***/ }),
 
-/***/ "./src/js/modules/Librarian.js":
-/*!*************************************!*\
-  !*** ./src/js/modules/Librarian.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Librarian": () => (/* binding */ Librarian)
-/* harmony export */ });
-/* harmony import */ var _BookList_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BookList.js */ "./src/js/modules/BookList.js");
-/* harmony import */ var _Book_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Book.js */ "./src/js/modules/Book.js");
-/* harmony import */ var _Library_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Library.js */ "./src/js/modules/Library.js");
-
-
-
-
-// Controller
-class Librarian {
-    constructor() {
-        this.bookList = new _BookList_js__WEBPACK_IMPORTED_MODULE_0__.BookList();
-        this.library = new _Library_js__WEBPACK_IMPORTED_MODULE_2__.Library();
-        this.library.bindAddBook(this.addBookHandler);
-    }
-
-    addBookHandler(inputTitle, inputAuthor, inputYear, inputReadStatus) {
-        this.bookList.addBook(new _Book_js__WEBPACK_IMPORTED_MODULE_1__.Book(inputTitle, inputAuthor, inputYear, inputReadStatus));
-    }
-}
-
-/***/ }),
-
 /***/ "./src/js/modules/Library.js":
 /*!***********************************!*\
   !*** ./src/js/modules/Library.js ***!
@@ -628,11 +595,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Library": () => (/* binding */ Library)
 /* harmony export */ });
 /* harmony import */ var _BookList_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BookList.js */ "./src/js/modules/BookList.js");
-/* harmony import */ var _assets_icons_delete_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/icons/delete.svg */ "./src/assets/icons/delete.svg");
+/* harmony import */ var _Book_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Book.js */ "./src/js/modules/Book.js");
+/* harmony import */ var _assets_icons_delete_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/icons/delete.svg */ "./src/assets/icons/delete.svg");
 
 
 
-// View
+
 class Library {
     constructor() {
         this.bookList = new _BookList_js__WEBPACK_IMPORTED_MODULE_0__.BookList();
@@ -648,6 +616,22 @@ class Library {
         this.confirmAddBookBtn = document.getElementById('add-book');
 
         this.enableAppOptions();
+    }
+
+    get inputTitle() {
+        return document.getElementById("book-title").value
+    }
+
+    get inputAuthor() {
+        return document.getElementById("book-author").value
+    }
+
+    get inputYear() {
+        return document.getElementById("year").value
+    }
+
+    get inputReadStatus() {
+        return document.getElementById("read-status").checked; // True or False
     }
 
     createElement(tag, className) {
@@ -705,6 +689,17 @@ class Library {
         element.parentElement.parentElement.remove();
     }   
 
+    addBookHandler() {
+        event.preventDefault();
+        const book = new _Book_js__WEBPACK_IMPORTED_MODULE_1__.Book(this.inputTitle, this.inputAuthor, this.inputYear, this.inputReadStatus);
+        
+        this.bookList.addBook(book);
+        
+        this.showAddBookModalHandler();
+        this.clearUserInputs();
+        this.render();
+    }
+
     showAddBookModalHandler() {
         const addBookModal = document.getElementById("add-edit-book");
         const backdrop = document.getElementById("backdrop");
@@ -725,25 +720,11 @@ class Library {
         this.allBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this));
         this.readBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this, "read"));
         this.notReadBooksBtn.addEventListener("click", this.filterBooksHandler.bind(this, "not read"));
+        this.addBookBtn.addEventListener("click", this.showAddBookModalHandler);
         this.returnBtn.addEventListener("click", this.returnHandler.bind(this));
         this.confirmAddBookBtn.addEventListener("click", this.addBookHandler.bind(this));
     }
 
-    bindAddBook(handler) {
-        this.addBookBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            const inputTitle = document.getElementById("book-title").value;
-            const inputAuthor = document.getElementById("book-author").value;
-            const inputYear = document.getElementById("year").value;
-            const inputReadStatus = document.getElementById("read-status").checked; // True or False
-
-            handler(inputTitle, inputAuthor, inputYear, inputReadStatus);
-            this.clearUserInputs();
-            this.showAddBookModalHandler();
-            this.render();
-        })
-    }
-        
     enableBookCardOptions() {
         const bookListElement = document.querySelector("ul");
         const booksArray = Array.prototype.slice.call(bookListElement.children); // converts HTML collection to array
@@ -764,7 +745,7 @@ class Library {
     }
 
     renderBook(book) {
-        const bookCard = this.createElement("li", "book-card");
+        const bookCard = this.createElement('li', 'book-card');
         bookCard.innerHTML = `
             <div class="book-card__content">
                 <h2>${book.title}</h2>
@@ -780,14 +761,14 @@ class Library {
                         book.read ? "checked" : ""
                     }>
                 </div>
-                <img src="${_assets_icons_delete_svg__WEBPACK_IMPORTED_MODULE_1__}" class="icon delete-book" alt="Delete book">
+                <img src="${_assets_icons_delete_svg__WEBPACK_IMPORTED_MODULE_2__}" class="icon delete-book" alt="Delete book">
             </div>
         `;
     return bookCard;
     }
 
     renderBookList(userInput="") {
-        const bookList = this.createElement("ul", "book-list");
+        const bookList = this.createElement('ul', 'book-list');
 
         // Sample the book list based on the search term
         const searchedBooks = !userInput
@@ -979,16 +960,16 @@ var __webpack_exports__ = {};
   !*** ./src/js/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_Librarian_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/Librarian.js */ "./src/js/modules/Librarian.js");
+/* harmony import */ var _modules_Library_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/Library.js */ "./src/js/modules/Library.js");
 /* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/style.css */ "./src/css/style.css");
 
 
 
 class App {
     static init() {
-        const librarian = new _modules_Librarian_js__WEBPACK_IMPORTED_MODULE_0__.Librarian();
-        librarian.library.render();
-        librarian.library.clearUserInputs();
+        const libraryApp = new _modules_Library_js__WEBPACK_IMPORTED_MODULE_0__.Library();
+        libraryApp.render();
+        libraryApp.clearUserInputs();
     }
 }
   
@@ -997,4 +978,4 @@ App.init();
 
 /******/ })()
 ;
-//# sourceMappingURL=main-6c62f495dfdc757ea9fc.js.map
+//# sourceMappingURL=main-5ae2b410668ae4a6b419.js.map
